@@ -1,5 +1,6 @@
 package auxiliar;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import modelo.Datos;
@@ -12,6 +13,8 @@ public class Practicas {
 	//SEGUNDA EVALUACION
 	
 	public void introLista() {
+		ArrayList <Estudiante> listaE;
+		
 		
 	}
 	
