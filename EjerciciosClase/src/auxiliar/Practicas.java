@@ -7,6 +7,17 @@ import modelo.Equipo;
 import modelo.Estudiante;
 
 public class Practicas {
+	
+	
+	//SEGUNDA EVALUACION
+	
+	public void introLista() {
+		
+	}
+	
+	
+	
+	
 	// private static String[] diasSemana = { "lunes", "martes", "miercoles",
 	// "jueves", "viernes", "sábado", "domingo" };
 
