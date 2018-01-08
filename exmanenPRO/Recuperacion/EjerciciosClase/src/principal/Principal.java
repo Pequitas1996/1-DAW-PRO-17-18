@@ -123,7 +123,8 @@ public class Principal {
 		
 		Metodos metodo = new Metodos();
 		
-		String[] nifs = {"49981575E" , "458756335"};
+		String nifs = ("49981575E");
+		System.out.println(metodo.metodo1(nifs) ? "true" : "false");
 	
 		String[]vehiculoLista = {
 				"2@CITROEN@C4@16.25",

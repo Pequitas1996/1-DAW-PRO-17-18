@@ -8,7 +8,7 @@ import examen.Metodos;
 import modelo.Datos;
 import modelo.Equipo;
 import modelo.Estudiante;
-import modelo.Vehiculo;
+import modelo.Libro;
 import modelo.Persona;
 import modelo.Profesor;
 
@@ -102,8 +102,10 @@ public class Principal {
 		}
 		int[][] puntosJornadas = new Datos().getPuntosJornada();
 		Equipo[] clasi = practicas.obtenerClasificacion3(puntosJornadas);
-		//String nif = "345239";
-	//	System.out.println(practicas.validarNif(nif)?"OK":"KO");
+		
+		
+		String nif = "345239";
+		//System.out.println(practicas.validarNif(nif)?"OK":"KO");
 		int x=67;
 		//System.out.println("El numero "+ x + (practicas.esPrimo(x)?" ES ":" NO ES ")+ " PRIMO" );
 		int[][] matriz = {
@@ -121,21 +123,9 @@ public class Principal {
 		//int[] primos = practicas.numerosPrimos(100);
 		//int [] fibonacci = practicas.numerosFibonacci(20);
 		
-		Metodos metodo = new Metodos();
 		
-		String[] nifs = {"49981575E" , "458756335"};
-	
-		String[]vehiculoLista = {
-				"2@CITROEN@C4@16.25",
-				"t@RENAULT@CLIO@5.50",
-				"7@TOYOTA@AURIS@16.X",
-				"5@VOLKWAGEN@TUAREG@18.50"
-		};
-		
-		Vehiculo[] vehiculo = metodo.metodo(vehiculoLista);
-		
-		int[][] numerosPartida = metodo.metodo3(3,5);
-		
+		String numero ="49981575";
+
 		System.out.println("fin");
 
 	}

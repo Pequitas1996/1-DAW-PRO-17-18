@@ -118,7 +118,7 @@ public class Practicas {
 		return clasificacion;
 	}
 
-	public static boolean validarNif(String nif) {
+	public boolean validarNif(String nif) {
 		char[] letrasValidas = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q',
 				'V', 'H', 'L', 'C', 'K', 'E' };
 
