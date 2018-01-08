@@ -136,6 +136,7 @@ public class Principal {
 		
 		int[][] numerosPartida = metodo.metodo3(3,5);
 		
+		practicas.introLista();
 		System.out.println("fin");
 
 	}
