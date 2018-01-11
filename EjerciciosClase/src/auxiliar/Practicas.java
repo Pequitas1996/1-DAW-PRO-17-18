@@ -12,7 +12,9 @@ public class Practicas {
 	
 	//SEGUNDA EVALUACION
 	
-	public void introLista() {
+	private int size;
+
+	public ArrayList <Estudiante> introLista() {
 		ArrayList <Estudiante> listaE;
 		listaE = new ArrayList<Estudiante>();
 		Estudiante est1 = new Estudiante(123);
@@ -33,13 +35,67 @@ public class Practicas {
 		}
 		
 		for (int i = 0; i < listaE.size(); i++) {// for normal que utilizamos para las array del trimestre pasado
-			System.out.println(listaE.get(i).getCodGrupo());
+			//System.out.println(listaE.get(i).getCodGrupo());
 		}
 		
-		System.out.println("fin introListas");
+		//System.out.println("fin introListas");
+		return listaE;
 	
+
 	}
 	
+	public ArrayList <String> cadena(){
+		ArrayList <String> listaH;
+		listaH = new ArrayList<String>();
+		String cad1 = new String("456");
+		String cad2 = new String("789");
+		String cad3 = new String("-13");
+		String cad4 = new String("12*1");
+		
+		listaH.add(cad1);
+		listaH.add(cad2);
+		listaH.add(cad3);
+		listaH.add(cad4);
+		int tam = listaH.size();
+		
+	for (int i = 0; i < listaH.size(); i++) {
+		System.out.println(listaH.get(i));
+		
+	}
+		
+	//System.out.println("Fin Cadena");
+	return listaH;
+		
+	}
+
+
+	
+	//11 enero 2018
+	//leer una matriz de int y derivala como ArrayList
+	
+
+	
+	public ArrayList<ArrayList<Integer>>convierteMatizArrayLista(int[][] matriz){
+	ArrayList<ArrayList<Integer>> resultado = new  ArrayList<ArrayList<Integer>>();
+		
+	 
+	 for (int[] filaMatriz : matriz) {
+		 ArrayList<Integer>filaLista = new ArrayList<Integer>();
+		 for (int numero : filaMatriz) 
+			 filaLista.add(numero);
+			
+		 resultado.add(filaLista);
+	 }
+	return resultado;
+		
+	}
+	
+	/*public ArrayList<Integer>ordenaClasificacion(ArrayList<String> goles){
+		ArrayList<Integer> resultado = new ArrayList<Integer>();
+		
+		return resultado;
+		
+	}*/
 	
 	
 	
@@ -184,6 +240,8 @@ public class Practicas {
 					numeros[j] = aux;
 				}
 	}
+	
+
 
 	public void ordenaClasificacion(int[] numeros, String[] equipos) {
 		for (int i = 0; i < numeros.length - 1; i++)
@@ -264,6 +322,27 @@ public class Practicas {
 		}
 		return resultado;
 	}
+	
+	public ArrayList<Integer> convierteCadenasANumeros(ArrayList<String> cadenas) {
+		ArrayList<Integer> resultado = new ArrayList<Integer>();
+		//int[] resultado = new int[cadenas.size()];
+		
+		//for (int i = 0; i < resultado.length; i++) {
+		for (String cadena : cadenas) {
+					
+			try {
+
+				//resultado[i] = Integer.parseInt(cadenas.get(i));
+				resultado.add(Integer.parseInt(cadena));
+			} catch (NumberFormatException e) {
+
+				//resultado[i] = -1;
+				resultado.add(-1);
+			}
+		}
+		return resultado;
+	}
+	
 
 	public void muestraNumeros() {
 
@@ -390,6 +469,20 @@ public class Practicas {
 			}
 		}
 	}
+	
+	public void listaEstudiantes(ArrayList<Estudiante> lista) {
+		for (Estudiante estudiante : lista) {
+			// if (estudiante != null)
+			try {
+				System.out.println(estudiante.getNombre());
+			} catch (NullPointerException e) {
+
+			}
+		}
+		
+	}
+	
+	
 
 	public int visitantesIslaYear(int isla, int[][] v) {
 		int acu = 0;
@@ -397,6 +490,7 @@ public class Practicas {
 			acu += v[isla][j];
 		return acu;
 	}
+	
 
 	public int visitantesMesYear(int mes, int[][] v) {
 		int acu = 0;
@@ -448,3 +542,5 @@ public class Practicas {
 		}
 	}
 }
+
+

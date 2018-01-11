@@ -1,6 +1,7 @@
 package principal;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import auxiliar.Practicas;
@@ -65,6 +66,9 @@ public class Principal {
 				{ 23, 3, 56, 12, 32, 23, 17, 12, 11, 34, 45, 45 }, { 23, 1, 56, 12, 32, 23, 17, 12, 11, 34, 45, 37 }
 
 		};
+		
+		ArrayList<ArrayList<Integer>> listaMatriz = practicas.convierteMatizArrayLista(visitantesYear);
+					
 		String[] islas = { "GC", "LTE", "FTV", "TFE", "LPA", "GOM", "HIE" };
 		String[] meses = { "ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC" };
 
@@ -102,6 +106,8 @@ public class Principal {
 		}
 		int[][] puntosJornadas = new Datos().getPuntosJornada();
 		Equipo[] clasi = practicas.obtenerClasificacion3(puntosJornadas);
+		
+		
 		//String nif = "345239";
 	//	System.out.println(practicas.validarNif(nif)?"OK":"KO");
 		int x=67;
@@ -135,8 +141,17 @@ public class Principal {
 		Vehiculo[] vehiculo = metodo.metodo(vehiculoLista);
 		
 		int[][] numerosPartida = metodo.metodo3(3,5);
+
 		
-		practicas.introLista();
+		//Segundo Trimestre de Programacion.
+		
+		//ArrayList<Estudiante> Lista = practicas.introLista();
+		//practicas.listaEstudiantes(practicas.introLista());
+		
+		 //ArrayList<String> lista = practicas.cadena();
+		// ArrayList<Integer> numeros = practicas.convierteCadenasANumeros(practicas.cadena());
+	
+	
 		System.out.println("fin");
 
 	}
