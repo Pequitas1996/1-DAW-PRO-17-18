@@ -1,7 +1,9 @@
 package auxiliar;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
+import java.util.Set;
 
 import modelo.Datos;
 import modelo.Equipo;
@@ -14,7 +16,7 @@ public class Practicas {
 	
 	private int size;
 
-	public ArrayList <Estudiante> introLista() {
+	public ArrayList<Estudiante> introLista() {
 		ArrayList <Estudiante> listaE;
 		listaE = new ArrayList<Estudiante>();
 		Estudiante est1 = new Estudiante(123);
@@ -90,14 +92,30 @@ public class Practicas {
 		
 	}
 	
-	/*public ArrayList<Integer>ordenaClasificacion(ArrayList<String> goles){
-		ArrayList<Integer> resultado = new ArrayList<Integer>();
+
+	
+	//clase de mapas con hashMap.
+	
+	public HashMap<String , Estudiante> introMapas(){
+		//la clave representa en nif del Estudiante
+		HashMap<String, Estudiante> resultado = new HashMap<String , Estudiante>();
+		Estudiante est = new Estudiante (123, "435G", "Paco", 'H', null, 180, null, null);
+		resultado.put(est.getNif(), est);
+		Estudiante estudiante = resultado.get("435G");
+		Estudiante est2 = new Estudiante (321, "435G", "Carlos", 'H', null, 180, null, null);
+		
+		resultado.put("435G",est2);
+		resultado.put("123t", new Estudiante (123, "123t", "Pepe", 'H', null, 180, null, null));
+		
+		Set<String> claves = resultado.keySet();
+		for (String clave : claves) {
+			System.out.println(resultado.get(clave).getNombre());
+		}
 		
 		return resultado;
 		
-	}*/
-	
-	
+	}
+		
 	
 	// private static String[] diasSemana = { "lunes", "martes", "miercoles",
 	// "jueves", "viernes", "sábado", "domingo" };

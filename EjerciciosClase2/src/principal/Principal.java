@@ -3,6 +3,8 @@ package principal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Set;
 
 import auxiliar.Practicas;
 import examen.Metodos;
@@ -67,10 +69,10 @@ public class Principal {
 
 		};
 		
-		ArrayList<ArrayList<Integer>> listaMatriz = practicas.convierteMatizArrayLista(visitantesYear);
+		//ArrayList<ArrayList<Integer>> listaMatriz = practicas.convierteMatizArrayLista(visitantesYear);
 					
-		String[] islas = { "GC", "LTE", "FTV", "TFE", "LPA", "GOM", "HIE" };
-		String[] meses = { "ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC" };
+		//String[] islas = { "GC", "LTE", "FTV", "TFE", "LPA", "GOM", "HIE" };
+		//String[] meses = { "ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC" };
 
 		/*
 		 * int isla=2; int mes =7; System.out.println("Visitantes en "+ islas[isla]
@@ -149,9 +151,14 @@ public class Principal {
 		//practicas.listaEstudiantes(practicas.introLista());
 		
 		 //ArrayList<String> lista = practicas.cadena();
-		// ArrayList<Integer> numeros = practicas.convierteCadenasANumeros(practicas.cadena());
+		
+		ArrayList<Integer> numeros = practicas.convierteCadenasANumeros(practicas.cadena());
+		HashMap<String, Estudiante> mapa = practicas.introMapas();
+		Estudiante noexisto = mapa.get("noexisto");
+		
 	
-	
+		
+		
 		System.out.println("fin");
 
 	}
