@@ -318,7 +318,7 @@ public class Practicas {
 					estudiantes[j] = aux;
 				}
 	}
-
+	
 	public float calculaSaldo(float saldoInicial, float[] movimientos) {
 		float saldoFinal = saldoInicial;
 		for (int i = 0; i < movimientos.length; i++)

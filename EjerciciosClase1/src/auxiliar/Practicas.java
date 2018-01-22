@@ -15,6 +15,7 @@ import java.util.Set;
 import modelo.Datos;
 import modelo.Equipo;
 import modelo.Estudiante;
+import modelo.Venta;
 
 public class Practicas {
 
@@ -89,15 +90,15 @@ public class Practicas {
 			BufferedReader br = new BufferedReader(fr);
 			String linea;
 			LocalDate fechaHoy;
-			//System.out.println(LocalDate.now());
+			// System.out.println(LocalDate.now());
 			// Leer el fichero linea a linea
 			while (true) {
-				
+
 				while ((linea = br.readLine()) != null) {
-				String[] campos = linea.split("&&");
-				System.out.println(linea);
-				System.out.println(calculaEdad(campos[2]));
-				linea.length();
+					String[] campos = linea.split("&&");
+					System.out.println(linea);
+					System.out.println(calculaEdad(campos[2]));
+					linea.length();
 				}
 				// Cerrar fichero
 				fr.close();
@@ -117,13 +118,107 @@ public class Practicas {
 		LocalDate fechaNac = LocalDate.parse(fechaNacimiento, fmt);
 		LocalDate ahora = LocalDate.now();
 		Period periodo = Period.between(fechaNac, ahora);
-		System.out.printf("Tu edad es: %s años, %s meses y %s días",
-		                    periodo.getYears(), periodo.getMonths(), periodo.getDays());
+		System.out.printf("Tu edad es: %s años, %s meses y %s días", periodo.getYears(), periodo.getMonths(),
+				periodo.getDays());
 		return periodo.getYears();
 	}
 
 	// private static String[] diasSemana = { "lunes", "martes", "miercoles",
 	// "jueves", "viernes", "sábado", "domingo" };
+
+	public ArrayList<String> LeerFicherpoArrayList(String fichero) {
+		ArrayList<String> resultado = new ArrayList<String>();
+		try {
+			// Abrir el fichero
+			FileReader fr = new FileReader("ficheros/personas.txt");
+			BufferedReader br = new BufferedReader(fr);
+			String linea;
+			LocalDate fechaHoy;
+			// System.out.println(LocalDate.now());
+			// Leer el fichero linea a linea
+
+			while ((linea = br.readLine()) != null) {
+				resultado.add(linea);
+			}
+			// Cerrar fichero
+			fr.close();
+			br.close();
+
+		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		} catch (NullPointerException e) {
+			System.out.println("EOF");
+		}
+		return resultado;
+	}
+
+	public HashMap<String, String> LeerFicherpoHashMap(String fichero) {
+		HashMap<String, String> resultado = new HashMap<String, String>();
+		try {
+			// Abrir el fichero
+			FileReader fr = new FileReader("ficheros/personas.txt");
+			BufferedReader br = new BufferedReader(fr);
+			String linea;
+			LocalDate fechaHoy;
+			// System.out.println(LocalDate.now());
+			// Leer el fichero linea a linea
+
+			while ((linea = br.readLine()) != null) {
+				resultado.put(linea.split("&&")[0], linea);
+			}
+			// Cerrar fichero
+			fr.close();
+			br.close();
+
+		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		} catch (NullPointerException e) {
+			System.out.println("EOF");
+		}
+		return resultado;
+	}
+
+	public HashMap<String, ArrayList<Float>> resumenventasVendedor(String ficheroVentas) {
+		HashMap<String, ArrayList<Float>> resultado = new HashMap<String, ArrayList<Float>>();
+
+		try {
+			FileReader fr = new FileReader("ficheros/ventaDep.txt");
+			BufferedReader br = new BufferedReader(fr);
+			String linea;
+
+			while ((linea = br.readLine()) != null) {
+				String fecha = linea.split("%")[0];
+				String idVendedor = linea.split("%")[1];
+				float importe = Float.parseFloat(linea.split("%")[2]);
+				if (resultado.get(idVendedor) == null) {
+					ArrayList<Float> listaVenta = new ArrayList<Float>();
+					listaVenta.add(importe);
+					resultado.put(idVendedor, listaVenta);
+				} else {
+					ArrayList<Float> listaVenta = resultado.get(idVendedor);
+					listaVenta.add(importe);
+					resultado.put(idVendedor, listaVenta);
+				}
+			 			
+
+			}
+			fr.close();
+			br.close();
+		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		} catch (NullPointerException e) {
+			System.out.println("EOF");
+		}
+
+		return resultado;
+
+	}
 
 	public boolean esPrimo(int numero) {
 

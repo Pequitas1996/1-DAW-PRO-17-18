@@ -67,9 +67,7 @@ public class Principal {
 
 		};
 		ArrayList<ArrayList<Integer>> listaMatriz = practicas.convierteMatrizArrayLista(visitantesYear);
-		
-		
-		
+
 		String[] islas = { "GC", "LTE", "FTV", "TFE", "LPA", "GOM", "HIE" };
 		String[] meses = { "ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC" };
 
@@ -102,31 +100,25 @@ public class Principal {
 		String[] equipos = new Datos().getEquipos();
 		practicas.ordenaClasificacion(clasificacion, equipos);
 		for (int i = 0; i < equipos.length; i++) {
-			//System.out.println(equipos[i] + " \t" + clasificacion[i]);
+			// System.out.println(equipos[i] + " \t" + clasificacion[i]);
 
 		}
 		int[][] puntosJornadas = new Datos().getPuntosJornada();
 		Equipo[] clasi = practicas.obtenerClasificacion3(puntosJornadas);
 		String nif = "345239";
-	//	System.out.println(practicas.validarNif(nif)?"OK":"KO");
-		int x=67;
-		//System.out.println("El numero "+ x + (practicas.esPrimo(x)?" ES ":" NO ES ")+ " PRIMO" );
-		int[][] matriz = {
-				{3,4,8},
-				{6},
-				{5,9}
-		};
-		Integer[][] matriz2 = {
-				{3,4,null,8,null,12,37,null},
-				{6,7,12,null,34,21,null,11},
-				{5,null,9}
-		};
-	//	practicas.recorrerMatrizIrregularPorColumnas(matriz);
-		//practicas.recorrerMatrizIrregularPorColumnas2(matriz2);
-		//int[] primos = practicas.numerosPrimos(100);
-		//int [] fibonacci = practicas.numerosFibonacci(20);
-		//ArrayList<Estudiante> lista = practicas.introListas();
-	//	practicas.listaEstudiantes(practicas.introListas());
+		// System.out.println(practicas.validarNif(nif)?"OK":"KO");
+		int x = 67;
+		// System.out.println("El numero "+ x + (practicas.esPrimo(x)?" ES ":" NO ES ")+
+		// " PRIMO" );
+		int[][] matriz = { { 3, 4, 8 }, { 6 }, { 5, 9 } };
+		Integer[][] matriz2 = { { 3, 4, null, 8, null, 12, 37, null }, { 6, 7, 12, null, 34, 21, null, 11 },
+				{ 5, null, 9 } };
+		// practicas.recorrerMatrizIrregularPorColumnas(matriz);
+		// practicas.recorrerMatrizIrregularPorColumnas2(matriz2);
+		// int[] primos = practicas.numerosPrimos(100);
+		// int [] fibonacci = practicas.numerosFibonacci(20);
+		// ArrayList<Estudiante> lista = practicas.introListas();
+		// practicas.listaEstudiantes(practicas.introListas());
 		ArrayList<String> lista = new ArrayList<String>();
 		lista.add("12");
 		lista.add("19");
@@ -135,11 +127,15 @@ public class Principal {
 		ArrayList<Integer> numeros = practicas.convierteCadenasANumeros(lista);
 		HashMap<String, Estudiante> mapa = practicas.introMapas();
 		Estudiante noexisto = mapa.get("noexisto");
-		
-		practicas.leerFicheroTexto();
-		
-		System.out.println("fin");
 
+		practicas.leerFicheroTexto();
+
+		ArrayList<String> fichero = practicas.LeerFicherpoArrayList("ficheros/personas.txt");
+
+		HashMap<String, String> numero = practicas.LeerFicherpoHashMap("ficheros/personas.txt");
+
+		HashMap<String, ArrayList<Float>> mapa1 = practicas.resumenventasVendedor("ficheros/ventaDep.txt");
+		System.out.println("FIN");
 	}
 
 }
