@@ -15,7 +15,7 @@ import modelo.Profesor;
 
 public class Principal {
 	// metodo por el que debe empezar la ejecución ..
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		/*
 		 * Persona persona; persona = new Persona();
 		 * 
@@ -119,6 +119,7 @@ public class Principal {
 		// int [] fibonacci = practicas.numerosFibonacci(20);
 		// ArrayList<Estudiante> lista = practicas.introListas();
 		// practicas.listaEstudiantes(practicas.introListas());
+
 		ArrayList<String> lista = new ArrayList<String>();
 		lista.add("12");
 		lista.add("19");
@@ -135,6 +136,14 @@ public class Principal {
 		HashMap<String, String> numero = practicas.LeerFicherpoHashMap("ficheros/personas.txt");
 
 		HashMap<String, ArrayList<Float>> mapa1 = practicas.resumenventasVendedor("ficheros/ventaDep.txt");
+	
+		ArrayList<Float> movs = new ArrayList<Float>();
+		movs.add(51.4f);
+		movs.add(40.0f);
+		movs.add(85.3f);
+		
+		float saldo7 = practicas.calculaSaldo(0, movs);
+
 		System.out.println("FIN");
 	}
 

@@ -203,7 +203,6 @@ public class Practicas {
 					listaVenta.add(importe);
 					resultado.put(idVendedor, listaVenta);
 				}
-			 			
 
 			}
 			fr.close();
@@ -422,6 +421,20 @@ public class Practicas {
 		for (int i = 0; i < movimientos.length; i++)
 			saldoFinal += movimientos[i];
 		return saldoFinal;
+	}
+
+	public float calculaSaldo(float saldoInicial, ArrayList<Float> movimientos) {
+		float saldoFinal = saldoInicial;
+		for (int i = 0; i < movimientos.size(); i++) {
+			saldoFinal += movimientos.get(i);
+		}
+
+		return saldoFinal;
+
+		/*
+		 * float saldoFinal = saldoInicial; for (int i = 0; i < movimientos.length; i++)
+		 * saldoFinal += movimientos[i]; return saldoFinal;
+		 */
 	}
 
 	public int[] convierteCadenasANumeros(String[] cadenas) {
@@ -649,4 +662,5 @@ public class Practicas {
 			}
 		}
 	}
+
 }
