@@ -402,6 +402,23 @@ public class Practicas {
 				}
 
 	}
+	
+	public ArrayList<String> ordenaCadenas(ArrayList<String> cadenas) {
+		ArrayList<String> resultado  = new ArrayList<String>();
+		for (int i = 0; i < cadenas.size(); i++) {
+			
+		}
+		return resultado;
+		
+		/*for (int i = 0; i < cadenas.length - 1; i++)
+			for (int j = i + 1; j < cadenas.length; j++)
+				if (cadenas[i].compareTo(cadenas[j]) > 0) {
+					String aux = cadenas[i];
+					cadenas[i] = cadenas[j];
+					cadenas[j] = aux;
+				}*/
+
+	}
 
 	public void ordenaEstudiantes(Estudiante[] estudiantes) {
 		// ejemplo de uso de la interfaz Comparable
